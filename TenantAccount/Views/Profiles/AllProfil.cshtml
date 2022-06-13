@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TenantAccount.Data.Entities.Profile>
+
+@{
+    ViewData["Title"] = "Все профили";
+}
+
+<h1>Все профили</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kpp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kpp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LegalAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emai)
+            </td>
+            <td>
+                <a asp-controller="Messages" asp-action="Create" asp-route-userId="@item.IdentityUser.Id">Написать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Подробности</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

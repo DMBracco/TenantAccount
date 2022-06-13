@@ -1,0 +1,113 @@
+﻿@model TenantAccount.Data.Entities.Profile
+
+@{
+    ViewData["Title"] = "Профиль";
+}
+
+<h1>Профиль</h1>
+
+@if(0 == Model?.Id)
+{
+    <p>
+        <a asp-action="Create">Создать</a>
+    </p>
+}
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Inn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Inn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kpp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kpp)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LegalAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LegalAddress)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActualAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActualAddress)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emai)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeadPosition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeadPosition)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManagerFullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ManagerFullName)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankDetails)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankDetails)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentificationDocument)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdentificationDocument)
+        </dd>
+    </dl>
+<div>
+    @if(0 != Model?.Id)
+{
+    <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> @:|
+}
+    <a asp-action="Delete" asp-route-id="@Model.Id">Удалить</a>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TenantAccount.Data.Entities.Message>
+
+@{
+    ViewData["Title"] = "Сообщения";
+    string rowColor = "";
+}
+
+<h1>Сообщения</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Read)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            @if (0 == item.Read)
+            {
+                <tr class='table-danger'>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        <a asp-action="Read" asp-route-id="@item.Id">Прочитать</a>
+                    </td>
+                </tr>
+            } else
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        <p>Прочитано</p>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
